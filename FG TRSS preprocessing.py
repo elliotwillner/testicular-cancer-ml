@@ -1,5 +1,5 @@
 import os
-import pyradise as pyr
+import pydicom as dic
 import pandas as pd
 import numpy as np
 
@@ -13,13 +13,13 @@ for file in dcm_files:
   dcm_path = os.path.join(data_dir, file)
 
   # Load the DICOM file
-  ds = pyr.dcm.load_dcm(dcm_path)
+  ds = dic.dcmread(dcm_path)
 
-  # Extract features (assuming you want HU values)
-  hu_values = ds.pixel_array
+  # Extract features
+  
 
   # Additional preprocessing steps (e.g., normalization, rescaling)
   # TO DO: add specific preprocessing steps here
 
   # Preprocess the data
-  preprocessed_data.append(hu_values)  # Append preprocessed data to the list
+  #preprocessed_data.append(hu_values)  # Append preprocessed data to the list
